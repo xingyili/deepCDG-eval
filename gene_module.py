@@ -41,10 +41,8 @@ set_seed(args.seed)
 torch.autograd.set_detect_anomaly(True)
 
 device = torch.device(args.device)
-data = get_ppi(args.dataset, PATH='/home/wuyingzhuo/PPI_data/')
-data_strc = torch.load(f'/home/wuyingzhuo/project2/data/str_{args.dataset}_fearures.pkl').cpu()
+data = get_ppi(args.dataset, PATH='./PPI_data/')
 data.x = data.x[:, :48]
-#data.x = torch.cat([data.x, data_strc], dim=1)
 
 num_nodes = data.y.shape[0]
 all_idx = np.array(range(num_nodes))
@@ -69,42 +67,10 @@ for epoch in tqdm(range(1, args.epochs + 1)):
     optimizer.step()
 
 model.eval()
-
-import networkx as nx
-import matplotlib.pyplot as plt
-
-# 将 edge_index 和 edge_mask 转换为 NetworkX 图
 all_gene = data.name
 count = np.zeros(len(all_gene), dtype=int)
 for id in mask:
-    if(all_gene[id] == "ATRX"):
-        print(id)
-    '''
     explainer = GNNExplainer(model, epochs=200)
     node_feat_mask, edge_mask = explainer.explain_node(id, data.x, data.edge_index)
     important_edges = data.edge_index[:, edge_mask > 0.7]
-    for (u, v) in zip(important_edges[0].tolist(), important_edges[1].tolist()):
-        if u != id:
-            count[u] += 1
-        if v != id:
-            count[v] += 1
-    '''
 
-
-'''
-pred, _ = model(data)
-all_gene = data.name
-
-pred_gene = all_gene[~all_mask]
-pred_score = torch.sigmoid(pred[~all_mask]).squeeze().cpu().detach().numpy()
-
-# 保存结果为csv文件，将建一个路径为pred_result的文件夹，里面存放了结果文件
-pred_result_path = 'pred_result'
-if not os.path.exists(pred_result_path):
-    os.makedirs(pred_result_path)
-result = pd.DataFrame({'pred_gene': pred_gene, 'pred_score': pred_score})
-# 对result按照pred_score进行排序：
-result_sorted = result.sort_values(by='pred_score', ascending=False)
-result_sorted.to_csv(f'{pred_result_path}/{args.dataset}_pred_result.csv', index=False)
-
-'''
