@@ -21,7 +21,7 @@ Performance evaluation on independent test can be run by calling
 ``python independent_dataset.py``
 
 ## Prediction of potential cancer driver genes by deepCDG
-Prediction evaluation can be run bt running
+Prediction evaluation can be run bt calling
 
 `` python predict.py``
 
@@ -32,3 +32,8 @@ Since you can get the prediction of potential cancer driver genes list, you can 
 
 ## Drug sensitivity analysis
 You can visit the [Gene Set Cancer analysis](http://bioinfo.life.hust.edu.cn/GSCA) to do drug sensitivity analysis using the prediction of cancer driver gene.
+
+## Gene module dissection in pan-cancer
+Gene module dissection can be run by calling
+
+``python gene_module.py``
