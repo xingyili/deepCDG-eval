@@ -48,8 +48,8 @@ set_seed(args.seed)
 device = torch.device(args.device)
 
 # data = load_net_specific_data(args)
-data = get_ppi(args.dataset, PATH='/home/wuyingzhuo/PPI_data/')
-data_strc = torch.load(f'/home/wuyingzhuo/project2/data/str_{args.dataset}_fearures.pkl').cpu()
+data = get_ppi(args.dataset, PATH='./data/')
+data_strc = torch.load(f'./data/str_{args.dataset}_fearures.pkl').cpu()
 data.x = data.x[:, :48]
 
 data = data.to(device)
