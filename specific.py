@@ -38,7 +38,7 @@ device = torch.device(args.device)
 path = f'./data/Benchmark_NCG61.csv'
 df = pd.read_csv(path)
 
-data = get_ppi(args.dataset, PATH='./data/')
+data = get_ppi(args.dataset, PATH='./PPI_data/')
 length = len(data.name)
 
 cancer = ['KIRC', 'BRCA', 'READ', 'PRAD', 'STAD',
