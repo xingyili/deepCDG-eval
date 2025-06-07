@@ -1,5 +1,7 @@
 # deepCDG-eval
-This repository contains the evaluation of deepCDG. For the dataset, please follow the instructions from [https://github.com/xingyili/deepCDG](https://github.com/xingyili/deepCDG)
+This repository contains the evaluation of deepCDG. 
+
+To get the dataset, please follow the instructions from [https://github.com/xingyili/deepCDG](https://github.com/xingyili/deepCDG)
 ##  Robustness evaluation on pan-cancer datasets
 Performance evaluation can be run by calling
 
