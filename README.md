@@ -9,3 +9,8 @@ Performance evaluation can be run by calling
 Time overhead analysis can be run by calling
 
 ``python time&cuda.py``
+
+## Evaluation oncancertype-specific driver gene prediction
+Performance evaluation can be run by calling
+
+``python specific.py``
