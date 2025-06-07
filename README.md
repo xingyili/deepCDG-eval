@@ -29,3 +29,6 @@ The prediction result will be saved as a csv profile.
 
 ## Enrichment analysis
 Since you can get the prediction of potential cancer driver genes list, you can do enrichment analysis on these genes using any tools such as R.
+
+## Drug sensitivity analysis
+You can visit the [Gene Set Cancer analysis](http://bioinfo.life.hust.edu.cn/GSCA) to do drug sensitivity analysis using the prediction of cancer driver gene.
