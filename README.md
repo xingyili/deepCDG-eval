@@ -22,6 +22,10 @@ Performance evaluation on independent test can be run by calling
 
 ## Prediction of potential cancer driver genes by deepCDG
 Prediction evaluation can be run bt running
+
 `` python predict.py``
 
 The prediction result will be saved as a csv profile. 
+
+## Enrichment analysis
+Since you can get the prediction of potential cancer driver genes list, you can do enrichment analysis using any tool such as R.
