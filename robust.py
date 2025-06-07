@@ -101,7 +101,6 @@ def permute_features(x, ratio=0.25):
 # load data
 device = torch.device(args.device)
 data = get_ppi(args.dataset, PATH='./data/')
-data_strc = torch.load(f'./data/str_{args.dataset}_fearures.pkl').cpu()
 data.x = data.x[:, :48]
 
 if args.perturbation == 'Network':
