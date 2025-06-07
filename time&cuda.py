@@ -48,7 +48,8 @@ set_seed(args.seed)
 device = torch.device(args.device)
 
 # data = load_net_specific_data(args)
-data = get_ppi(args.dataset, PATH='./data/')
+data = get_ppi(args.dataset, PATH='./PPI_data/')
+data.x = data.x[:, :48]
 data = data.to(device)
 
 all_mask = (data.train_mask | data.val_mask | data.test_mask).cpu().numpy()
