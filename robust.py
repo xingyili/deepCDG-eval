@@ -100,10 +100,9 @@ def permute_features(x, ratio=0.25):
 
 # load data
 device = torch.device(args.device)
-data = get_ppi(args.dataset, PATH='/home/wuyingzhuo/PPI_data/')
-data_strc = torch.load(f'/home/wuyingzhuo/project2/data/str_{args.dataset}_fearures.pkl').cpu()
+data = get_ppi(args.dataset, PATH='./data/')
+data_strc = torch.load(f'./data/str_{args.dataset}_fearures.pkl').cpu()
 data.x = data.x[:, :48]
-#data.x = torch.cat([data.x, data_strc], dim=1)
 
 if args.perturbation == 'Network':
     data.edge_index = permute_edges(data.edge_index, args.perturbation_ratio)
@@ -152,10 +151,8 @@ for train_index, test_index in skf.split(idx_list, y): #划分训练集和测试
     # 将测试集索引位置设置为True
     test_mask[idx_list[test_index]] = True
 
-
     train_mask_set.append(train_mask)
     test_masks_set.append(test_mask)
-
 
 # Ten times of 5_CV
 best_test_auprc_list = []
