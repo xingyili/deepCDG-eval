@@ -10,7 +10,13 @@ Time overhead analysis can be run by calling
 
 ``python time&cuda.py``
 
-## Evaluation oncancertype-specific driver gene prediction
+## Evaluation on cancer type-specific driver gene prediction
 Performance evaluation can be run by calling
 
 ``python specific.py``
+
+## Performance evaluation on independent test sets
+Performance evaluation on independent test can be run by calling
+
+`` python independent_dataset.py``
+
