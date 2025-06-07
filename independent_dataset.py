@@ -44,7 +44,7 @@ def load_ongene(PATH='./data/ongene_human.txt'):
     gene_list = ongene['OncogeneName'].tolist()
     return gene_list
 
-def load_oncokb(PATH='.data/OncoKB_cancerGeneList.tsv'):
+def load_oncokb(PATH='./data/OncoKB_cancerGeneList.tsv'):
     oncokb = pd.read_csv(PATH, sep='\t')
     gene_list = oncokb['Hugo Symbol'].tolist()
     return gene_list
