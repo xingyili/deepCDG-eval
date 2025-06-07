@@ -35,10 +35,10 @@ args = parser.parse_args()
 set_seed(args.seed)
 device = torch.device(args.device)
 
-path = f'/home/wuyingzhuo/MTGCN-master/data/Benchmark_NCG61.csv'
+path = f'./data/Benchmark_NCG61.csv'
 df = pd.read_csv(path)
 
-data = get_ppi(args.dataset, PATH='/home/wuyingzhuo/PPI_data/')
+data = get_ppi(args.dataset, PATH='./data/')
 length = len(data.name)
 
 cancer = ['KIRC', 'BRCA', 'READ', 'PRAD', 'STAD',
