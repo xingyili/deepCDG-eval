@@ -18,5 +18,5 @@ Performance evaluation can be run by calling
 ## Performance evaluation on independent test sets
 Performance evaluation on independent test can be run by calling
 
-`` python independent_dataset.py``
+``python independent_dataset.py``
 
