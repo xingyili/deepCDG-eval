@@ -39,18 +39,18 @@ set_seed(args.seed)
 device = torch.device(args.device)
 torch.autograd.set_detect_anomaly(True)
 
-def load_ongene(PATH='/home/wuyingzhuo/PPI_data/ongene_human.txt'):
+def load_ongene(PATH='./data/ongene_human.txt'):
     ongene = pd.read_csv(PATH, sep='\t')
     gene_list = ongene['OncogeneName'].tolist()
     return gene_list
 
-def load_oncokb(PATH='/home/wuyingzhuo/PPI_data/OncoKB_cancerGeneList.tsv'):
+def load_oncokb(PATH='.data/OncoKB_cancerGeneList.tsv'):
     oncokb = pd.read_csv(PATH, sep='\t')
     gene_list = oncokb['Hugo Symbol'].tolist()
     return gene_list
 
 """ Experimental settings """
-data = get_ppi(dataset=args.dataset, PATH='/home/wuyingzhuo/PPI_data/')
+data = get_ppi(dataset=args.dataset, PATH='./PPI_data/')
 data.x = data.x[:, :48]
 num_nodes = data.y.shape[0]
 all_idx = np.array(range(num_nodes))
